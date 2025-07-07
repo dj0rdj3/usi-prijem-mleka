@@ -5,7 +5,7 @@
                 "uuid": "62701c1e-2365-4c38-99be-4caa8587c7a6",
                 "id": 1,
                 "createdAt": "2025-07-06 11:31:16",
-                "updatedAt": "2025-07-07 09:46:42",
+                "updatedAt": "2025-07-07 10:07:02",
                 "settings": {
                     "cssFramework": "tailwind",
                     "uiStarterKit": "other",
@@ -96,10 +96,10 @@
                 },
                 "vthemeCdn": "https://cdn.tailwindcss.com",
                 "connectionFinished": true,
-                "canIgnoreNextSchemaSourceChanges": true,
-                "lastReadSchemaDataHash": "2dea923d4877e100d031dd9b40d0e2f6",
-                "currentSchemaError": "schema-reader-db Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vemto_schema_reader.migrations' doesn't exist (Connection: vemto_db_connection, SQL: insert into `migrations` (`migration`, `batch`) values (0001_01_01_000000_create_users_table, 1))",
-                "currentSchemaErrorStack": "schema-reader-db Error: #0 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Connection.php(776): Illuminate\\Database\\Connection->runQueryCallback('insert into `mi...', Array, Object(Closure))\n#1 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(42): Illuminate\\Database\\Connection->run('insert into `mi...', Array, Object(Closure))\n#2 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3747): Illuminate\\Database\\MySqlConnection->insert('insert into `mi...', Array)\n#3 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(121): Illuminate\\Database\\Query\\Builder->insert(Array)\n#4 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(255): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->log('0001_01_01_0000...', 1)\n#5 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(210): Illuminate\\Database\\Migrations\\Migrator->runUp('/Users/dj0rdj3/...', 1, false)\n#6 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(137): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)\n#7 phar:///Applications/Vemto.app/Contents/Resources/static/VMTTL2/index.php(117): Illuminate\\Database\\Migrations\\Migrator->run('/Users/dj0rdj3/...')\n#8 phar:///Applications/Vemto.app/Contents/Resources/static/VMTTL2/common/Vemto.php(147): {closure:phar:///Applications/Vemto.app/Contents/Resources/static/VMTTL2/index.php:20}()\n#9 phar:///Applications/Vemto.app/Contents/Resources/static/VMTTL2/index.php(20): Vemto\\Vemto::execute('schema-reader-d...', Object(Closure))\n#10 /Applications/Vemto.app/Contents/Resources/static/VMTTL2(15): require('phar:///Applica...')\n#11 {main}"
+                "canIgnoreNextSchemaSourceChanges": false,
+                "lastReadSchemaDataHash": "bc4c6dc1928da770de0653e7bd434521",
+                "currentSchemaError": null,
+                "currentSchemaErrorStack": null
             },
             "__tableData": {
                 "count": 1,
@@ -204,7 +204,7 @@
                 },
                 "id": 1,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": 0,
                 "positionY": 0,
                 "sectionId": 2,
@@ -473,7 +473,7 @@
                 },
                 "id": 2,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": 0,
                 "positionY": 700,
                 "sectionId": 2,
@@ -521,7 +521,7 @@
                 },
                 "id": 3,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": 495,
                 "positionY": 495,
                 "sectionId": 2,
@@ -569,7 +569,7 @@
                 },
                 "id": 4,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": 700,
                 "positionY": 0,
                 "sectionId": 2,
@@ -617,7 +617,7 @@
                 },
                 "id": 5,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": 495,
                 "positionY": -495,
                 "sectionId": 2,
@@ -637,7 +637,7 @@
                 },
                 "id": 6,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": 0,
                 "positionY": -700,
                 "sectionId": 2,
@@ -685,7 +685,7 @@
                 },
                 "id": 7,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": -495,
                 "positionY": -495,
                 "sectionId": 2,
@@ -733,7 +733,7 @@
                 },
                 "id": 8,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": -700,
                 "positionY": 0,
                 "sectionId": 2,
@@ -781,7 +781,7 @@
                 },
                 "id": 9,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": "-136.667",
                 "positionY": "-35",
                 "sectionId": 1,
@@ -794,7 +794,7 @@
                 "createdFromInterface": false,
                 "id": 10,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-07 09:43:02",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": "913",
                 "positionY": "-38",
                 "removed": false,
@@ -838,7 +838,7 @@
                 "createdFromInterface": false,
                 "id": 11,
                 "createdAt": "2025-07-06 12:08:49",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": "421",
                 "positionY": "289",
                 "removed": false,
@@ -882,7 +882,7 @@
                 "createdFromInterface": false,
                 "id": 12,
                 "createdAt": "2025-07-06 12:44:36",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "positionX": "913",
                 "positionY": "440",
                 "removed": false,
@@ -954,7 +954,7 @@
                 "options": [],
                 "id": 1,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "__tableData": {
                 "count": 90,
@@ -1389,7 +1389,7 @@
                 "options": [],
                 "id": 2,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_3": {
                 "name": "expiration",
@@ -1424,7 +1424,7 @@
                 "options": [],
                 "id": 3,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_4": {
                 "name": "key",
@@ -1459,7 +1459,7 @@
                 "options": [],
                 "id": 4,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_5": {
                 "name": "owner",
@@ -1494,7 +1494,7 @@
                 "options": [],
                 "id": 5,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_6": {
                 "name": "expiration",
@@ -1529,7 +1529,7 @@
                 "options": [],
                 "id": 6,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_7": {
                 "name": "id",
@@ -1564,7 +1564,7 @@
                 "options": [],
                 "id": 7,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_8": {
                 "name": "uuid",
@@ -1599,7 +1599,7 @@
                 "options": [],
                 "id": 8,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_9": {
                 "name": "connection",
@@ -1634,7 +1634,7 @@
                 "options": [],
                 "id": 9,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_10": {
                 "name": "queue",
@@ -1669,7 +1669,7 @@
                 "options": [],
                 "id": 10,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:43"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_11": {
                 "name": "payload",
@@ -1704,7 +1704,7 @@
                 "options": [],
                 "id": 11,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_12": {
                 "name": "exception",
@@ -1739,7 +1739,7 @@
                 "options": [],
                 "id": 12,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_13": {
                 "name": "failed_at",
@@ -1774,7 +1774,7 @@
                 "options": [],
                 "id": 13,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_14": {
                 "name": "id",
@@ -1809,7 +1809,7 @@
                 "options": [],
                 "id": 14,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_15": {
                 "name": "name",
@@ -1844,7 +1844,7 @@
                 "options": [],
                 "id": 15,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_16": {
                 "name": "total_jobs",
@@ -1879,7 +1879,7 @@
                 "options": [],
                 "id": 16,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_17": {
                 "name": "pending_jobs",
@@ -1914,7 +1914,7 @@
                 "options": [],
                 "id": 17,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_18": {
                 "name": "failed_jobs",
@@ -1949,7 +1949,7 @@
                 "options": [],
                 "id": 18,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_19": {
                 "name": "failed_job_ids",
@@ -1984,7 +1984,7 @@
                 "options": [],
                 "id": 19,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_20": {
                 "name": "options",
@@ -2019,7 +2019,7 @@
                 "options": [],
                 "id": 20,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_21": {
                 "name": "cancelled_at",
@@ -2054,7 +2054,7 @@
                 "options": [],
                 "id": 21,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_22": {
                 "name": "created_at",
@@ -2089,7 +2089,7 @@
                 "options": [],
                 "id": 22,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_23": {
                 "name": "finished_at",
@@ -2124,7 +2124,7 @@
                 "options": [],
                 "id": 23,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_24": {
                 "name": "id",
@@ -2159,7 +2159,7 @@
                 "options": [],
                 "id": 24,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_25": {
                 "name": "queue",
@@ -2194,7 +2194,7 @@
                 "options": [],
                 "id": 25,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_26": {
                 "name": "payload",
@@ -2229,7 +2229,7 @@
                 "options": [],
                 "id": 26,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_27": {
                 "name": "attempts",
@@ -2264,7 +2264,7 @@
                 "options": [],
                 "id": 27,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_28": {
                 "name": "reserved_at",
@@ -2299,7 +2299,7 @@
                 "options": [],
                 "id": 28,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_29": {
                 "name": "available_at",
@@ -2334,7 +2334,7 @@
                 "options": [],
                 "id": 29,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_30": {
                 "name": "created_at",
@@ -2369,7 +2369,7 @@
                 "options": [],
                 "id": 30,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_31": {
                 "name": "id",
@@ -2404,7 +2404,7 @@
                 "options": [],
                 "id": 31,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_32": {
                 "name": "migration",
@@ -2439,7 +2439,7 @@
                 "options": [],
                 "id": 32,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_33": {
                 "name": "batch",
@@ -2474,7 +2474,7 @@
                 "options": [],
                 "id": 33,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_34": {
                 "name": "email",
@@ -2509,7 +2509,7 @@
                 "options": [],
                 "id": 34,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_35": {
                 "name": "token",
@@ -2544,7 +2544,7 @@
                 "options": [],
                 "id": 35,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_36": {
                 "name": "created_at",
@@ -2579,7 +2579,7 @@
                 "options": [],
                 "id": 36,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_37": {
                 "name": "id",
@@ -2614,7 +2614,7 @@
                 "options": [],
                 "id": 37,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_38": {
                 "name": "user_id",
@@ -2649,7 +2649,7 @@
                 "options": [],
                 "id": 38,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_39": {
                 "name": "ip_address",
@@ -2684,7 +2684,7 @@
                 "options": [],
                 "id": 39,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_40": {
                 "name": "user_agent",
@@ -2719,7 +2719,7 @@
                 "options": [],
                 "id": 40,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_41": {
                 "name": "payload",
@@ -2754,7 +2754,7 @@
                 "options": [],
                 "id": 41,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_42": {
                 "name": "last_activity",
@@ -2789,7 +2789,7 @@
                 "options": [],
                 "id": 42,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_43": {
                 "name": "id",
@@ -2824,7 +2824,7 @@
                 "options": [],
                 "id": 43,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_44": {
                 "name": "name",
@@ -2859,7 +2859,7 @@
                 "options": [],
                 "id": 44,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_45": {
                 "name": "email",
@@ -2894,7 +2894,7 @@
                 "options": [],
                 "id": 45,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_47": {
                 "name": "password",
@@ -2929,7 +2929,7 @@
                 "options": [],
                 "id": 47,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_48": {
                 "name": "remember_token",
@@ -2964,7 +2964,7 @@
                 "options": [],
                 "id": 48,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_49": {
                 "name": "created_at",
@@ -2999,7 +2999,7 @@
                 "options": [],
                 "id": 49,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_50": {
                 "name": "updated_at",
@@ -3034,7 +3034,7 @@
                 "options": [],
                 "id": 50,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_53": {
                 "name": "deleted_at",
@@ -3066,7 +3066,7 @@
                 "project": 1,
                 "id": 53,
                 "createdAt": "2025-07-06 11:35:17",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 9,
                 "total": null,
                 "places": null,
@@ -3102,7 +3102,7 @@
                 "order": 0,
                 "id": 55,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-07 09:43:14",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3137,7 +3137,7 @@
                 "order": 6,
                 "id": 56,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-07 09:43:14",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3172,7 +3172,7 @@
                 "order": 7,
                 "id": 57,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-07 09:43:14",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3207,7 +3207,7 @@
                 "project": 1,
                 "id": 58,
                 "createdAt": "2025-07-06 11:47:50",
-                "updatedAt": "2025-07-07 09:43:14",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 8,
                 "total": null,
                 "places": null,
@@ -3242,7 +3242,7 @@
                 "faker": "fake()->address()",
                 "id": 59,
                 "createdAt": "2025-07-06 11:48:27",
-                "updatedAt": "2025-07-07 09:43:14",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 2,
                 "total": null,
                 "places": null,
@@ -3277,7 +3277,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 60,
                 "createdAt": "2025-07-06 11:49:39",
-                "updatedAt": "2025-07-07 09:43:14",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 3,
                 "total": null,
                 "places": null,
@@ -3316,7 +3316,7 @@
                 "faker": "'{DEFAULT_OR_FIRST}'",
                 "id": 61,
                 "createdAt": "2025-07-06 11:49:49",
-                "updatedAt": "2025-07-07 09:43:14",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 4,
                 "options": [
                     "kravlje",
@@ -3355,7 +3355,7 @@
                 "faker": "fake()->randomNumber()",
                 "id": 63,
                 "createdAt": "2025-07-06 11:52:19",
-                "updatedAt": "2025-07-07 09:43:14",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 5,
                 "total": null,
                 "places": null,
@@ -3394,7 +3394,7 @@
                 "options": [],
                 "id": 64,
                 "createdAt": "2025-07-06 12:06:04",
-                "updatedAt": "2025-07-06 13:14:44"
+                "updatedAt": "2025-07-07 10:07:01"
             },
             "item_65": {
                 "name": "id",
@@ -3422,10 +3422,11 @@
                 "unsigned": true,
                 "default": null,
                 "autoIncrement": true,
+                "faker": "",
                 "order": 0,
                 "id": 65,
                 "createdAt": "2025-07-06 12:08:49",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3460,7 +3461,7 @@
                 "order": 10,
                 "id": 66,
                 "createdAt": "2025-07-06 12:08:49",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3495,7 +3496,7 @@
                 "order": 11,
                 "id": 67,
                 "createdAt": "2025-07-06 12:08:49",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3530,7 +3531,7 @@
                 "project": 1,
                 "id": 68,
                 "createdAt": "2025-07-06 12:09:17",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 12,
                 "total": null,
                 "places": null,
@@ -3569,7 +3570,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 69,
                 "createdAt": "2025-07-06 12:09:40",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 5,
                 "options": [
                     "kravlje",
@@ -3608,7 +3609,7 @@
                 "faker": "fake()->randomNumber(0)",
                 "id": 70,
                 "createdAt": "2025-07-06 12:10:04",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 6,
                 "total": null,
                 "places": null,
@@ -3643,7 +3644,7 @@
                 "faker": "fake()->randomNumber(1)",
                 "id": 71,
                 "createdAt": "2025-07-06 12:10:30",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 7,
                 "places": 2,
                 "total": 8,
@@ -3678,7 +3679,7 @@
                 "faker": "fake()->boolean()",
                 "id": 72,
                 "createdAt": "2025-07-06 12:17:20",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 8,
                 "total": null,
                 "places": null,
@@ -3713,7 +3714,7 @@
                 "faker": "fake()->text()",
                 "id": 73,
                 "createdAt": "2025-07-06 12:17:43",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 9,
                 "total": null,
                 "places": null,
@@ -3748,7 +3749,7 @@
                 "faker": "fake()->randomNumber()",
                 "id": 74,
                 "createdAt": "2025-07-06 12:23:19",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 2,
                 "total": null,
                 "places": null,
@@ -3783,7 +3784,7 @@
                 "faker": "fake()->randomNumber()",
                 "id": 75,
                 "createdAt": "2025-07-06 12:24:09",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 3,
                 "total": null,
                 "places": null,
@@ -3818,7 +3819,7 @@
                 "faker": "fake()->randomNumber()",
                 "id": 76,
                 "createdAt": "2025-07-06 12:24:56",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 4,
                 "total": null,
                 "places": null,
@@ -3853,7 +3854,7 @@
                 "faker": "fake()->randomNumber()",
                 "id": 77,
                 "createdAt": "2025-07-06 12:25:24",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 1,
                 "total": null,
                 "places": null,
@@ -3893,7 +3894,7 @@
                 "faker": "'{DEFAULT_OR_FIRST}'",
                 "id": 78,
                 "createdAt": "2025-07-06 12:38:02",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 6,
                 "options": [
                     "rukovodilac",
@@ -3930,10 +3931,11 @@
                 "unsigned": true,
                 "default": null,
                 "autoIncrement": true,
+                "faker": "",
                 "order": 0,
                 "id": 79,
                 "createdAt": "2025-07-06 12:44:36",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3968,7 +3970,7 @@
                 "order": 14,
                 "id": 80,
                 "createdAt": "2025-07-06 12:44:36",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -4003,7 +4005,7 @@
                 "order": 15,
                 "id": 81,
                 "createdAt": "2025-07-06 12:44:36",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "total": null,
                 "places": null,
                 "options": []
@@ -4037,7 +4039,7 @@
                 "faker": "fake()->boolean()",
                 "id": 82,
                 "createdAt": "2025-07-06 12:44:56",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 12,
                 "total": null,
                 "places": null,
@@ -4072,7 +4074,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 83,
                 "createdAt": "2025-07-06 12:47:40",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 2,
                 "total": null,
                 "places": null,
@@ -4107,7 +4109,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 84,
                 "createdAt": "2025-07-06 12:47:58",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 4,
                 "total": null,
                 "places": null,
@@ -4142,7 +4144,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 85,
                 "createdAt": "2025-07-06 12:48:10",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 6,
                 "total": null,
                 "places": null,
@@ -4177,7 +4179,7 @@
                 "faker": "fake()->randomNumber(0)",
                 "id": 86,
                 "createdAt": "2025-07-06 12:48:28",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 11,
                 "total": null,
                 "places": null,
@@ -4212,7 +4214,7 @@
                 "faker": "fake()->text()",
                 "id": 87,
                 "createdAt": "2025-07-06 12:48:44",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 13,
                 "total": null,
                 "places": null,
@@ -4247,7 +4249,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 88,
                 "createdAt": "2025-07-06 12:48:58",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 8,
                 "total": null,
                 "places": null,
@@ -4282,7 +4284,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 89,
                 "createdAt": "2025-07-06 12:49:38",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 10,
                 "total": null,
                 "places": null,
@@ -4317,7 +4319,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 90,
                 "createdAt": "2025-07-06 12:51:13",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 9,
                 "total": null,
                 "places": null,
@@ -4352,7 +4354,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 91,
                 "createdAt": "2025-07-06 12:51:53",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 3,
                 "total": null,
                 "places": null,
@@ -4387,7 +4389,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 92,
                 "createdAt": "2025-07-06 12:52:28",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 5,
                 "total": null,
                 "places": null,
@@ -4422,7 +4424,7 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 93,
                 "createdAt": "2025-07-06 12:52:51",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 7,
                 "total": null,
                 "places": null,
@@ -4457,7 +4459,7 @@
                 "faker": "fake()->randomNumber()",
                 "id": 98,
                 "createdAt": "2025-07-06 13:12:47",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "order": 1,
                 "total": null,
                 "places": null,
@@ -4467,20 +4469,36 @@
                 "name": "naziv",
                 "type": "string",
                 "index": false,
-                "length": null,
+                "length": "255",
                 "unique": false,
                 "tableId": 10,
                 "removed": false,
-                "schemaState": null,
+                "schemaState": {
+                    "name": "naziv",
+                    "length": "255",
+                    "nullable": false,
+                    "unsigned": false,
+                    "autoIncrement": false,
+                    "type": "string",
+                    "index": false,
+                    "unique": false,
+                    "default": null,
+                    "total": null,
+                    "places": null,
+                    "options": []
+                },
                 "nullable": false,
                 "unsigned": false,
-                "default": "",
+                "default": null,
                 "autoIncrement": false,
                 "faker": "fake()->text({LENGTH})",
                 "id": 99,
                 "createdAt": "2025-07-07 09:43:06",
-                "updatedAt": "2025-07-07 09:43:14",
-                "order": 1
+                "updatedAt": "2025-07-07 10:07:01",
+                "order": 1,
+                "total": null,
+                "places": null,
+                "options": []
             }
         },
         "indices": {
@@ -4510,7 +4528,7 @@
                 },
                 "id": 1,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false
             },
             "__tableData": {
@@ -4625,7 +4643,7 @@
                 },
                 "id": 2,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false
             },
             "item_3": {
@@ -4654,7 +4672,7 @@
                 },
                 "id": 3,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false
             },
             "item_4": {
@@ -4683,7 +4701,7 @@
                 },
                 "id": 4,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false
             },
             "item_5": {
@@ -4712,7 +4730,7 @@
                 },
                 "id": 5,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false
             },
             "item_7": {
@@ -4730,7 +4748,7 @@
                 "onDelete": "cascade",
                 "id": 7,
                 "createdAt": "2025-07-06 11:52:20",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false,
                 "algorithm": null,
                 "schemaState": {
@@ -4761,7 +4779,7 @@
                 "onDelete": "cascade",
                 "id": 8,
                 "createdAt": "2025-07-06 12:23:19",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false,
                 "algorithm": null,
                 "schemaState": {
@@ -4792,7 +4810,7 @@
                 "onDelete": "cascade",
                 "id": 9,
                 "createdAt": "2025-07-06 12:24:09",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false,
                 "algorithm": null,
                 "schemaState": {
@@ -4823,7 +4841,7 @@
                 "onDelete": "cascade",
                 "id": 10,
                 "createdAt": "2025-07-06 12:24:56",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false,
                 "algorithm": null,
                 "schemaState": {
@@ -4854,7 +4872,7 @@
                 "onDelete": "cascade",
                 "id": 11,
                 "createdAt": "2025-07-06 12:25:24",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false,
                 "algorithm": null,
                 "schemaState": {
@@ -4885,7 +4903,7 @@
                 "onDelete": "restrict",
                 "id": 15,
                 "createdAt": "2025-07-06 13:12:47",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:01",
                 "removed": false,
                 "algorithm": null,
                 "schemaState": {
@@ -5103,7 +5121,7 @@
                 },
                 "id": 1,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "plural": "Users",
                 "pluralAndSingularAreSame": false,
                 "tableId": 9,
@@ -5225,7 +5243,7 @@
                 "appends": [],
                 "id": 2,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "hasSoftDeletes": true,
                 "hooksWhenSchemaWasRead": {},
                 "removed": false,
@@ -5301,7 +5319,7 @@
                 "appends": [],
                 "id": 3,
                 "createdAt": "2025-07-06 12:08:49",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "hasSoftDeletes": true,
                 "hooksWhenSchemaWasRead": {},
                 "removed": false,
@@ -5375,7 +5393,7 @@
                 "appends": [],
                 "id": 4,
                 "createdAt": "2025-07-06 12:44:36",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "hooksWhenSchemaWasRead": {},
                 "removed": false,
                 "tableName": "preuzeto_mleko",
@@ -5560,7 +5578,7 @@
                 "projectId": 1,
                 "id": 1,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-07 09:46:04"
+                "updatedAt": "2025-07-07 10:06:46"
             },
             "__tableData": {
                 "count": 2,
@@ -5737,7 +5755,7 @@
                 "foreignKeyId": 63,
                 "id": 4,
                 "createdAt": "2025-07-06 11:52:20",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "removed": false,
                 "relatedTableName": "users",
                 "relatedModelName": "App\\Models\\User",
@@ -5820,7 +5838,7 @@
                 },
                 "id": 5,
                 "createdAt": "2025-07-06 12:08:07",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "relatedModelId": 2,
                 "parentKeyId": 43,
                 "foreignKeyId": 63,
@@ -5842,7 +5860,7 @@
                 "usingFirstDefaultName": false,
                 "id": 6,
                 "createdAt": "2025-07-06 12:23:19",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "inverseId": 7,
                 "removed": false,
                 "relatedTableName": "radni_nalozi",
@@ -5896,7 +5914,7 @@
                 "foreignKeyId": 76,
                 "id": 7,
                 "createdAt": "2025-07-06 12:23:19",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "removed": false,
                 "relatedTableName": "users",
                 "relatedModelName": "App\\Models\\User",
@@ -5949,7 +5967,7 @@
                 "foreignKeyId": 75,
                 "id": 8,
                 "createdAt": "2025-07-06 12:24:09",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "removed": false,
                 "relatedTableName": "users",
                 "relatedModelName": "App\\Models\\User",
@@ -6002,7 +6020,7 @@
                 "foreignKeyId": 76,
                 "id": 9,
                 "createdAt": "2025-07-06 12:24:56",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "removed": false,
                 "relatedTableName": "users",
                 "relatedModelName": "App\\Models\\User",
@@ -6054,7 +6072,7 @@
                 "usingFirstDefaultName": true,
                 "id": 10,
                 "createdAt": "2025-07-06 12:25:24",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "inverseId": 11,
                 "removed": false,
                 "relatedTableName": "radni_nalozi",
@@ -6108,7 +6126,7 @@
                 "foreignKeyId": 77,
                 "id": 11,
                 "createdAt": "2025-07-06 12:25:24",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "removed": false,
                 "relatedTableName": "domacinstva",
                 "relatedModelName": "App\\Models\\Domacinstvo",
@@ -6161,7 +6179,7 @@
                 "foreignKeyId": 75,
                 "id": 14,
                 "createdAt": "2025-07-06 12:35:51",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "removed": false,
                 "relatedTableName": "radni_nalozi",
                 "relatedModelName": "App\\Models\\RadniNalog",
@@ -6214,7 +6232,7 @@
                 "foreignKeyId": 76,
                 "id": 15,
                 "createdAt": "2025-07-06 12:36:21",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "removed": false,
                 "relatedTableName": "radni_nalozi",
                 "relatedModelName": "App\\Models\\RadniNalog",
@@ -6266,7 +6284,7 @@
                 "usingFirstDefaultName": false,
                 "id": 22,
                 "createdAt": "2025-07-06 13:12:47",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "inverseId": 23,
                 "removed": false,
                 "relatedTableName": "preuzeto_mleko",
@@ -6320,7 +6338,7 @@
                 "foreignKeyId": 98,
                 "id": 23,
                 "createdAt": "2025-07-06 13:12:47",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 10:07:02",
                 "removed": false,
                 "relatedTableName": "radni_nalozi",
                 "relatedModelName": "App\\Models\\RadniNalog",
