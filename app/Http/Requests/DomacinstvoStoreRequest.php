@@ -20,9 +20,11 @@ class DomacinstvoStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'naziv' => ['required', 'string', 'max:255'],
             'adresa' => ['required', 'string', 'max:255'],
-            'koordinate' => ['required', 'string', 'max:255'],
-            'tipovi_mleka' => ['required', 'array', 'in_array_keys:kravlje,kozije,ovcije'],
+            'koordinate' => ['required', 'array', 'min:2', 'max:2'],
+            'tipovi_mleka' => ['required', 'array', 'min:1', 'max:3'],
+            'tipovi_mleka.*' => ['in:kravlje,kozije,ovcije']
         ];
     }
 }
