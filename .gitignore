@@ -24,3 +24,5 @@ yarn-error.log
 /.zed
 
 .vemto_settings
+/draft.yaml
+/.blueprint

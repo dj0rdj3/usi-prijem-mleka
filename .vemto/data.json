@@ -5,7 +5,7 @@
                 "uuid": "62701c1e-2365-4c38-99be-4caa8587c7a6",
                 "id": 1,
                 "createdAt": "2025-07-06 11:31:16",
-                "updatedAt": "2025-07-06 13:14:44",
+                "updatedAt": "2025-07-07 09:46:42",
                 "settings": {
                     "cssFramework": "tailwind",
                     "uiStarterKit": "other",
@@ -98,8 +98,8 @@
                 "connectionFinished": true,
                 "canIgnoreNextSchemaSourceChanges": true,
                 "lastReadSchemaDataHash": "2dea923d4877e100d031dd9b40d0e2f6",
-                "currentSchemaError": null,
-                "currentSchemaErrorStack": null
+                "currentSchemaError": "schema-reader-db Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vemto_schema_reader.migrations' doesn't exist (Connection: vemto_db_connection, SQL: insert into `migrations` (`migration`, `batch`) values (0001_01_01_000000_create_users_table, 1))",
+                "currentSchemaErrorStack": "schema-reader-db Error: #0 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Connection.php(776): Illuminate\\Database\\Connection->runQueryCallback('insert into `mi...', Array, Object(Closure))\n#1 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(42): Illuminate\\Database\\Connection->run('insert into `mi...', Array, Object(Closure))\n#2 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3747): Illuminate\\Database\\MySqlConnection->insert('insert into `mi...', Array)\n#3 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(121): Illuminate\\Database\\Query\\Builder->insert(Array)\n#4 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(255): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->log('0001_01_01_0000...', 1)\n#5 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(210): Illuminate\\Database\\Migrations\\Migrator->runUp('/Users/dj0rdj3/...', 1, false)\n#6 /Users/dj0rdj3/Sites/usi-prijem-mleka/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(137): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)\n#7 phar:///Applications/Vemto.app/Contents/Resources/static/VMTTL2/index.php(117): Illuminate\\Database\\Migrations\\Migrator->run('/Users/dj0rdj3/...')\n#8 phar:///Applications/Vemto.app/Contents/Resources/static/VMTTL2/common/Vemto.php(147): {closure:phar:///Applications/Vemto.app/Contents/Resources/static/VMTTL2/index.php:20}()\n#9 phar:///Applications/Vemto.app/Contents/Resources/static/VMTTL2/index.php(20): Vemto\\Vemto::execute('schema-reader-d...', Object(Closure))\n#10 /Applications/Vemto.app/Contents/Resources/static/VMTTL2(15): require('phar:///Applica...')\n#11 {main}"
             },
             "__tableData": {
                 "count": 1,
@@ -354,7 +354,8 @@
                                 59,
                                 60,
                                 61,
-                                63
+                                63,
+                                99
                             ],
                             "models.tableId": [
                                 2
@@ -793,9 +794,9 @@
                 "createdFromInterface": false,
                 "id": 10,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-06 13:14:43",
+                "updatedAt": "2025-07-07 09:43:02",
                 "positionX": "913",
-                "positionY": "-38.5",
+                "positionY": "-38",
                 "removed": false,
                 "migrations": [
                     {
@@ -956,8 +957,8 @@
                 "updatedAt": "2025-07-06 13:14:43"
             },
             "__tableData": {
-                "count": 89,
-                "lastPrimaryKey": 98,
+                "count": 90,
+                "lastPrimaryKey": 99,
                 "index": {
                     "1": {
                         "hasMany": {
@@ -1346,6 +1347,9 @@
                                 23
                             ]
                         }
+                    },
+                    "99": {
+                        "hasMany": {}
                     }
                 },
                 "additionalIndexes": {},
@@ -3094,10 +3098,11 @@
                 "unsigned": true,
                 "default": null,
                 "autoIncrement": true,
+                "faker": "",
                 "order": 0,
                 "id": 55,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-06 13:14:43",
+                "updatedAt": "2025-07-07 09:43:14",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3129,10 +3134,10 @@
                 "default": null,
                 "autoIncrement": false,
                 "faker": "fake()->dateTime()",
-                "order": 5,
+                "order": 6,
                 "id": 56,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-06 13:14:43",
+                "updatedAt": "2025-07-07 09:43:14",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3164,10 +3169,10 @@
                 "default": null,
                 "autoIncrement": false,
                 "faker": "fake()->dateTime()",
-                "order": 6,
+                "order": 7,
                 "id": 57,
                 "createdAt": "2025-07-06 11:47:30",
-                "updatedAt": "2025-07-06 13:14:43",
+                "updatedAt": "2025-07-07 09:43:14",
                 "total": null,
                 "places": null,
                 "options": []
@@ -3202,8 +3207,8 @@
                 "project": 1,
                 "id": 58,
                 "createdAt": "2025-07-06 11:47:50",
-                "updatedAt": "2025-07-06 13:14:43",
-                "order": 7,
+                "updatedAt": "2025-07-07 09:43:14",
+                "order": 8,
                 "total": null,
                 "places": null,
                 "options": []
@@ -3237,8 +3242,8 @@
                 "faker": "fake()->address()",
                 "id": 59,
                 "createdAt": "2025-07-06 11:48:27",
-                "updatedAt": "2025-07-06 13:14:43",
-                "order": 1,
+                "updatedAt": "2025-07-07 09:43:14",
+                "order": 2,
                 "total": null,
                 "places": null,
                 "options": []
@@ -3272,8 +3277,8 @@
                 "faker": "fake()->text({LENGTH})",
                 "id": 60,
                 "createdAt": "2025-07-06 11:49:39",
-                "updatedAt": "2025-07-06 13:14:43",
-                "order": 2,
+                "updatedAt": "2025-07-07 09:43:14",
+                "order": 3,
                 "total": null,
                 "places": null,
                 "options": []
@@ -3311,8 +3316,8 @@
                 "faker": "'{DEFAULT_OR_FIRST}'",
                 "id": 61,
                 "createdAt": "2025-07-06 11:49:49",
-                "updatedAt": "2025-07-06 13:14:43",
-                "order": 3,
+                "updatedAt": "2025-07-07 09:43:14",
+                "order": 4,
                 "options": [
                     "kravlje",
                     "kozije",
@@ -3350,8 +3355,8 @@
                 "faker": "fake()->randomNumber()",
                 "id": 63,
                 "createdAt": "2025-07-06 11:52:19",
-                "updatedAt": "2025-07-06 13:14:43",
-                "order": 4,
+                "updatedAt": "2025-07-07 09:43:14",
+                "order": 5,
                 "total": null,
                 "places": null,
                 "options": []
@@ -4457,6 +4462,25 @@
                 "total": null,
                 "places": null,
                 "options": []
+            },
+            "item_99": {
+                "name": "naziv",
+                "type": "string",
+                "index": false,
+                "length": null,
+                "unique": false,
+                "tableId": 10,
+                "removed": false,
+                "schemaState": null,
+                "nullable": false,
+                "unsigned": false,
+                "default": "",
+                "autoIncrement": false,
+                "faker": "fake()->text({LENGTH})",
+                "id": 99,
+                "createdAt": "2025-07-07 09:43:06",
+                "updatedAt": "2025-07-07 09:43:14",
+                "order": 1
             }
         },
         "indices": {
@@ -5536,7 +5560,7 @@
                 "projectId": 1,
                 "id": 1,
                 "createdAt": "2025-07-06 11:31:22",
-                "updatedAt": "2025-07-06 13:16:08"
+                "updatedAt": "2025-07-07 09:46:04"
             },
             "__tableData": {
                 "count": 2,

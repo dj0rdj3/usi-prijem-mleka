@@ -1,0 +1,9 @@
+controllers:
+  User:
+    resource: index, show, update, destroy
+  Domacinstvo:
+    resource: show, create, store, update, destroy
+  RadniNalog:
+    resource: index, show, create, store, update, destroy
+  PreuzetoMleko:
+    resource: index, show
