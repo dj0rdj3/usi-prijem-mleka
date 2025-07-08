@@ -45,30 +45,22 @@ return new class extends Migration {
             $table
                 ->foreign('rukovodilac_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('users');
 
             $table
                 ->foreign('vozac_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('users');
 
             $table
                 ->foreign('tehnolog_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('users');
 
             $table
                 ->foreign('domacinstvo_id')
                 ->references('id')
-                ->on('domacinstva')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('domacinstva');
         });
     }
 

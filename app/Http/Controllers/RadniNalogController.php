@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Inertia\Inertia;
+use App\Models\RadniNalog;
+use App\Models\Domacinstvo;
+use Illuminate\Http\Request;
 use App\Http\Requests\RadniNalogStoreRequest;
 use App\Http\Requests\RadniNalogUpdateRequest;
-use App\Models\RadniNalog;
-use Illuminate\Http\Request;
 
 class RadniNalogController extends Controller
 {
@@ -16,12 +19,19 @@ class RadniNalogController extends Controller
 
     public function create(Request $request)
     {
-        //
+        return Inertia::render('radni-nalog/Create', [
+            'domacinstva' => Domacinstvo::all(),
+            'vozaci' => User::where('tip', 'vozac')->get(),
+            'tehnolozi' => User::where('tip', 'tehnolog')->get(),
+        ]);
     }
 
     public function store(RadniNalogStoreRequest $request)
     {
-        //
+        $attributes = $request->validated();
+        $attributes['rukovodilac_id'] = $request->user()->id;
+        RadniNalog::create($attributes);
+        return redirect(route('dashboard'));
     }
 
     public function show(Request $request, RadniNalog $radniNalog)

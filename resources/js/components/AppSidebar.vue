@@ -41,6 +41,11 @@ switch (user.tip) {
                 href: '/dashboard',
                 icon: LayoutGrid,
             },
+            {
+                title: 'Izdavanje radnog naloga',
+                href: '/radni-nalog/create',
+                icon: BookOpen,
+            },
         ];
         break;
 }

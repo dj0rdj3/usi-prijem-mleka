@@ -20,10 +20,10 @@ class RadniNalogStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'domacinstvo_id' => ['required', 'integer'],
-            'vozac_id' => ['required', 'integer'],
-            'tehnolog_id' => ['required', 'integer'],
-            'tipovi_mleka' => ['required', 'array', 'in_array_keys:kravlje,kozije,ovcije'],
+            'domacinstvo_id' => ['required', 'integer', 'exists:domacinstva,id'],
+            'vozac_id' => ['required', 'integer', 'exists:users,id'],
+            'tehnolog_id' => ['required', 'integer', 'exists:users,id'],
+            'tip_mleka' => ['required', 'string', 'in:kravlje,kozije,ovcije'],
         ];
     }
 }

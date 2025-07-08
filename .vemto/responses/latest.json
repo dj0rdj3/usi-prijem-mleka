@@ -1698,8 +1698,8 @@
                     "algorithm": null,
                     "references": "id",
                     "on": "domacinstva",
-                    "onDelete": "cascade",
-                    "onUpdate": "cascade",
+                    "onDelete": "restrict",
+                    "onUpdate": "restrict",
                     "type": "foreign"
                 },
                 "radni_nalozi_rukovodilac_id_foreign": {
@@ -1710,8 +1710,8 @@
                     "algorithm": null,
                     "references": "id",
                     "on": "users",
-                    "onDelete": "cascade",
-                    "onUpdate": "cascade",
+                    "onDelete": "restrict",
+                    "onUpdate": "restrict",
                     "type": "foreign"
                 },
                 "radni_nalozi_tehnolog_id_foreign": {
@@ -1722,8 +1722,8 @@
                     "algorithm": null,
                     "references": "id",
                     "on": "users",
-                    "onDelete": "cascade",
-                    "onUpdate": "cascade",
+                    "onDelete": "restrict",
+                    "onUpdate": "restrict",
                     "type": "foreign"
                 },
                 "radni_nalozi_vozac_id_foreign": {
@@ -1734,8 +1734,8 @@
                     "algorithm": null,
                     "references": "id",
                     "on": "users",
-                    "onDelete": "cascade",
-                    "onUpdate": "cascade",
+                    "onDelete": "restrict",
+                    "onUpdate": "restrict",
                     "type": "foreign"
                 }
             }
@@ -2116,6 +2116,7 @@
             "namespace": "App\\Models",
             "path": "Models\/Domacinstvo.php",
             "allImports": [
+                "App\\Enums\\TipMleka",
                 "Illuminate\\Database\\Eloquent\\Model",
                 "Illuminate\\Database\\Eloquent\\SoftDeletes",
                 "Illuminate\\Database\\Eloquent\\Factories\\HasFactory"
@@ -2184,7 +2185,16 @@
                     "includedPivotColumns": []
                 }
             ],
-            "methods": [],
+            "methods": [
+                {
+                    "name": "getKoordinateAttribute",
+                    "content": "    public function getKoordinateAttribute($value)\n    {\n        return explode(',', $value);\n    }\n"
+                },
+                {
+                    "name": "getTipoviMlekaAttribute",
+                    "content": "    public function getTipoviMlekaAttribute($value)\n    {\n        return array_map(function ($name) {\n            foreach (TipMleka::cases() as $case) {\n                if ($case->name === strtoupper($name)) {\n                    return $case->value;\n                }\n            }\n            return null;\n        }, explode(',', $value));\n    }\n"
+                }
+            ],
             "hasTimestamps": true,
             "hasSoftDeletes": true,
             "isAuthenticatable": false
