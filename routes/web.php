@@ -16,6 +16,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('preuzeto-mleko', App\Http\Controllers\PreuzetoMlekoController::class)->only('index', 'show');
 
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('zaposleni', App\Http\Controllers\ZaposleniController::class)->only('index', 'update', 'destroy');
 });
 
 require __DIR__ . '/settings.php';

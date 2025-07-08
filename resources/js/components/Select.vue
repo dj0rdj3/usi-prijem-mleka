@@ -32,7 +32,7 @@ const modelValue = useVModel(props, 'modelValue', emits, {
       props.class,
     )"
   >
-    <option value='' v-text="placeholder"></option>
+    <option v-if="placeholder" value='' v-text="placeholder"></option>
     <option v-for="option in Object.entries(options ?? {})" :value="option[0]" v-text="option[1]"></option>
   </select>
 </template>

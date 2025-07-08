@@ -5,7 +5,7 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-vue-next';
+import { BookOpen, Folder, LayoutGrid, SquareUserRound } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 import { usePage } from '@inertiajs/vue3';
 
@@ -45,6 +45,11 @@ switch (user.tip) {
                 title: 'Izdavanje radnog naloga',
                 href: '/radni-nalog/create',
                 icon: BookOpen,
+            },
+            {
+                title: 'Zaposleni',
+                href: '/zaposleni',
+                icon: SquareUserRound,
             },
         ];
         break;

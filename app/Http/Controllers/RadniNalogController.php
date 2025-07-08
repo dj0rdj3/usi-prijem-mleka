@@ -19,6 +19,8 @@ class RadniNalogController extends Controller
 
     public function create(Request $request)
     {
+        if ($request->user()->tip !== 'rukovodilac') abort(403);
+
         return Inertia::render('radni-nalog/Create', [
             'domacinstva' => Domacinstvo::all(),
             'vozaci' => User::where('tip', 'vozac')->get(),
@@ -28,6 +30,8 @@ class RadniNalogController extends Controller
 
     public function store(RadniNalogStoreRequest $request)
     {
+        if ($request->user()->tip !== 'rukovodilac') abort(403);
+        
         $attributes = $request->validated();
         $attributes['rukovodilac_id'] = $request->user()->id;
         RadniNalog::create($attributes);
