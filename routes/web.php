@@ -14,6 +14,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('radni-nalog', App\Http\Controllers\RadniNalogController::class)->except('edit');
 
     Route::resource('preuzeto-mleko', App\Http\Controllers\PreuzetoMlekoController::class)->only('index', 'show');
+
+    Route::get('dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 });
 
 require __DIR__ . '/settings.php';

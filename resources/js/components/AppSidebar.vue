@@ -34,6 +34,15 @@ switch (user.tip) {
             ];
         }
         break;
+    case 'rukovodilac':
+        mainNavItems = [
+            {
+                title: 'Dashboard',
+                href: '/dashboard',
+                icon: LayoutGrid,
+            },
+        ];
+        break;
 }
 </script>
 
