@@ -31,6 +31,10 @@ export interface User {
     telefon: string;
     email: string;
     avatar?: string;
+    tip: string;
+    domacinstvo: {
+        id: number
+    };
     email_verified_at: string | null;
     created_at: string;
     updated_at: string;

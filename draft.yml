@@ -2,7 +2,7 @@ controllers:
   User:
     resource: index, show, update, destroy
   Domacinstvo:
-    resource: show, create, store, update, destroy
+    resource: show, create, store, edit, update, destroy
   RadniNalog:
     resource: index, show, create, store, update, destroy
   PreuzetoMleko:

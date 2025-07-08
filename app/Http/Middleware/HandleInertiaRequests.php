@@ -46,6 +46,9 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'auth.user.domacinstvo' => $request->user()?->tip === 'domacin'
+            ? \App\Models\Domacinstvo::firstWhere('user_id', $request->user()->id)
+            : null,
             'ziggy' => [
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),

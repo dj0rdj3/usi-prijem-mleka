@@ -7,19 +7,19 @@ import Heading from '@/components/Heading.vue';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Dashboard',
-        href: '/dashboard',
+        title: 'Početna',
+        href: '/pocetna',
     },
 ];
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Početna" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col rounded-xl p-4 overflow-x-auto">
             <Heading title="Zdravo!" description="Dobrodošli na sajt sistema prijema mleka u našoj mlekari." />
-            <p class="-my-4">Da biste započeli saradnju sa nama, potrebno je da unesete podatke o svom domaćinstvu <TextLink :href="route('domacinstvo.create')">ovde</TextLink>.</p>
+            <p>Da biste započeli saradnju sa nama, potrebno je da unesete podatke o svom domaćinstvu <TextLink :href="route('domacinstvo.create')">ovde</TextLink>.</p>
         </div>
     </AppLayout>
 </template>
