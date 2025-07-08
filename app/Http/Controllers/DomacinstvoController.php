@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\TipMleka;
 use Inertia\Inertia;
 use App\Models\Domacinstvo;
 use Illuminate\Http\Request;
@@ -37,7 +36,7 @@ class DomacinstvoController extends Controller
     public function show(Request $request, Domacinstvo $domacinstvo)
     {
         if ($domacinstvo->user_id !== $request->user()->id) {
-            return response(403);
+            return abort(403);
         }
 
         return Inertia::render('domacinstvo/Show', [
@@ -47,16 +46,36 @@ class DomacinstvoController extends Controller
 
     public function edit(Request $request, Domacinstvo $domacinstvo)
     {
-        //
+        if ($domacinstvo->user_id !== $request->user()->id) {
+            return abort(403);
+        }
+
+        return Inertia::render('domacinstvo/Edit', [
+            'domacinstvo' => $domacinstvo
+        ]);
     }
 
     public function update(DomacinstvoUpdateRequest $request, Domacinstvo $domacinstvo)
     {
-        //
+        if ($domacinstvo->user_id !== $request->user()->id) {
+            return abort(403);
+        }
+
+        $attributes = $request->validated();
+        $koordinate = $attributes['koordinate']['lat'] . "," . $attributes['koordinate']['lng'];
+        $attributes['koordinate'] = $koordinate;
+        $attributes['tipovi_mleka'] = implode(',', $attributes['tipovi_mleka']);
+
+        $domacinstvo->update($attributes);
+        return redirect(route('domacinstvo.show', $domacinstvo));
     }
 
     public function destroy(Request $request, Domacinstvo $domacinstvo)
     {
+        if ($domacinstvo->user_id !== $request->user()->id) {
+            return abort(403);
+        }
+
         $request->validate([
             'password' => ['required', 'current_password'],
         ]);

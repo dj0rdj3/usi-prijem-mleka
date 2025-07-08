@@ -20,7 +20,7 @@ const breadcrumbs = [
         <div class="flex h-full flex-1 flex-col rounded-xl p-4 overflow-x-auto">
             <div class="flex flex-col sm:flex-row gap-2 sm:gap-10 mb-3">
                 <div class="shrink-0">
-                    <Heading :title="domacinstvo.naziv" :description="domacinstvo.adresa" />
+                    <Heading :title="domacinstvo.naziv" :description="domacinstvo.adresa" class="max-w-xs" />
 
                     <div>
                         <h4 class="font-semibold">Vrste mleka koje nudite:</h4>
