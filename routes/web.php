@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [App\Http\Controllers\HomepageController::class, 'root'])->name('home');
-
 Route::middleware('auth')->group(function () {
+    Route::get('/', [App\Http\Controllers\HomepageController::class, 'root'])->name('home');
+    
     Route::get('pocetna', [App\Http\Controllers\HomepageController::class, 'pocetna'])->name('pocetna');
 
     Route::resource('users', App\Http\Controllers\UserController::class)->except('create', 'store', 'edit');
