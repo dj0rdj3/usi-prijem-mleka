@@ -20,7 +20,7 @@ class UserUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'tip' => ['required', 'in:vozac,tehnolog,domacin'],
+            'tip' => ['required', 'string', 'in:vozac,tehnolog,domacin'],
         ];
     }
 }

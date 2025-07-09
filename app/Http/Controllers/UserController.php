@@ -2,29 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserUpdateRequest;
 
 class UserController extends Controller
 {
     public function index(Request $request)
     {
-        //
+        if ($request->user()->tip !== 'rukovodilac') abort(403);
+
+        return Inertia::render('rukovodilac/Zaposleni', [
+            'zaposleni' => User::doesntHave('domacinstvo')->where('tip', '!=', 'rukovodilac')->get()
+        ]);
     }
 
-    public function show(Request $request, User $user)
+    public function show(Request $request, User $zaposleni)
     {
         //
     }
 
-    public function update(UserUpdateRequest $request, User $user)
+    public function update(UserUpdateRequest $request, User $zaposleni)
     {
-        //
+        if ($request->user()->tip !== 'rukovodilac') abort(403);
+
+        $attributes = $request->validated();
+
+        $zaposleni->update($attributes);
+        return redirect(route('zaposleni.index'));
     }
 
-    public function destroy(Request $request, User $user)
+    public function destroy(Request $request, User $zaposleni)
     {
-        //
+        if ($request->user()->tip !== 'rukovodilac') abort(403);
+
+        $zaposleni->delete();
+        return redirect(route('zaposleni.index'));
     }
 }

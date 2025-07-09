@@ -7,7 +7,7 @@ Route::middleware('auth')->group(function () {
     
     Route::get('pocetna', [App\Http\Controllers\HomepageController::class, 'pocetna'])->name('pocetna');
 
-    Route::resource('users', App\Http\Controllers\UserController::class)->except('create', 'store', 'edit');
+    Route::resource('zaposleni', App\Http\Controllers\UserController::class)->except('create', 'store', 'edit');
 
     Route::resource('domacinstvo', App\Http\Controllers\DomacinstvoController::class)->except('index');
 
@@ -16,7 +16,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('preuzeto-mleko', App\Http\Controllers\PreuzetoMlekoController::class)->only('index', 'show');
 
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('zaposleni', App\Http\Controllers\ZaposleniController::class)->only('index', 'update', 'destroy');
 });
 
 require __DIR__ . '/settings.php';
