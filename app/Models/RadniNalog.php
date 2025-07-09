@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\TipMleka;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,6 +15,15 @@ class RadniNalog extends Model
     protected $table = 'radni_nalozi';
 
     protected $guarded = [];
+
+    public function getTipMlekaAttribute($value)
+    {
+        foreach (TipMleka::cases() as $case) {
+            if ($case->name === strtoupper($value)) {
+                return $case->value;
+            }
+        }
+    }
 
     public function rukovodilac()
     {

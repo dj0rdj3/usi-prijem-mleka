@@ -23,6 +23,10 @@ class HomepageController extends Controller
             case 'rukovodilac':
                 return redirect(route('dashboard'));
                 break;
+            case 'vozac':
+            case 'tehnolog':
+                return redirect(route('radni-nalog.index'));
+                break;
         }
     }
 

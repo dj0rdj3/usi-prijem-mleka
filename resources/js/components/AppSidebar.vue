@@ -53,6 +53,16 @@ switch (user.tip) {
             },
         ];
         break;
+    case 'vozac':
+    case 'tehnolog':
+        mainNavItems = [
+            {
+                title: 'Radni nalozi',
+                href: '/radni-nalog',
+                icon: Folder,
+            },
+        ];
+        break;
 }
 </script>
 

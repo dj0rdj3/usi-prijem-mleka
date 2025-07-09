@@ -11,7 +11,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('domacinstvo', App\Http\Controllers\DomacinstvoController::class)->except('index');
 
-    Route::resource('radni-nalog', App\Http\Controllers\RadniNalogController::class)->except('edit');
+    Route::resource('radni-nalog', App\Http\Controllers\RadniNalogController::class);
 
     Route::resource('preuzeto-mleko', App\Http\Controllers\PreuzetoMlekoController::class)->only('index', 'show');
 

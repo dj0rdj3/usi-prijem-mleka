@@ -14,7 +14,15 @@ class RadniNalogController extends Controller
 {
     public function index(Request $request)
     {
-        //
+        $radni_nalozi = RadniNalog::where('primljeno', NULL)
+            ->where('vozac_id', $request->user()->id)
+            ->orWhere('tehnolog_id', $request->user()->id)
+            ->with('domacinstvo')
+            ->get();
+
+        return Inertia::render('radni-nalog/Index', [
+            'radni_nalozi' => $radni_nalozi
+        ]);
     }
 
     public function create(Request $request)
@@ -31,7 +39,7 @@ class RadniNalogController extends Controller
     public function store(RadniNalogStoreRequest $request)
     {
         if ($request->user()->tip !== 'rukovodilac') abort(403);
-        
+
         $attributes = $request->validated();
         $attributes['rukovodilac_id'] = $request->user()->id;
         RadniNalog::create($attributes);
@@ -39,6 +47,11 @@ class RadniNalogController extends Controller
     }
 
     public function show(Request $request, RadniNalog $radniNalog)
+    {
+        //
+    }
+
+    public function edit(Request $request, RadniNalog $radniNalog)
     {
         //
     }

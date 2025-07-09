@@ -4,6 +4,6 @@ controllers:
   Domacinstvo:
     resource: show, create, store, edit, update, destroy
   RadniNalog:
-    resource: index, show, create, store, update, destroy
+    resource
   PreuzetoMleko:
     resource: index, show
