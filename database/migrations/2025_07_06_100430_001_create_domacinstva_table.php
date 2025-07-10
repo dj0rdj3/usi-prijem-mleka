@@ -15,15 +15,18 @@ return new class extends Migration {
         Schema::create('domacinstva', function (Blueprint $table) {
             $table->id();
 
-            $table->string('naziv');
+            $table->string('naziv', 255);
 
-            $table->string('adresa');
+            $table->string('adresa', 255);
 
-            $table->string('koordinate');
+            $table->string('koordinate', 255);
 
             $table->set('tipovi_mleka', ['kravlje', 'kozije', 'ovcije']);
 
-            $table->bigInteger('user_id')->unsigned();
+            $table
+                ->bigInteger('user_id')
+                ->unsigned()
+                ->index();
 
             $table->timestamp('created_at')->nullable();
 
@@ -34,9 +37,7 @@ return new class extends Migration {
             $table
                 ->foreign('user_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('users');
         });
     }
 

@@ -310,7 +310,7 @@
                     "precision": null,
                     "scale": 0,
                     "order": 5,
-                    "index": false,
+                    "index": true,
                     "unique": false,
                     "nullable": false,
                     "unsigned": true,
@@ -385,8 +385,8 @@
                     "algorithm": null,
                     "references": "id",
                     "on": "users",
-                    "onDelete": "cascade",
-                    "onUpdate": "cascade",
+                    "onDelete": "restrict",
+                    "onUpdate": "restrict",
                     "type": "foreign"
                 }
             }
@@ -1130,7 +1130,7 @@
                     "precision": null,
                     "scale": 0,
                     "order": 1,
-                    "index": false,
+                    "index": true,
                     "unique": false,
                     "nullable": false,
                     "unsigned": true,
@@ -1328,6 +1328,25 @@
                     "isRawDefault": false,
                     "options": []
                 },
+                "procenat_mm": {
+                    "name": "procenat_mm",
+                    "type": "decimal",
+                    "total": 8,
+                    "places": 2,
+                    "length": null,
+                    "default": null,
+                    "comment": null,
+                    "precision": 8,
+                    "scale": 2,
+                    "order": 12,
+                    "index": false,
+                    "unique": false,
+                    "nullable": true,
+                    "unsigned": true,
+                    "autoIncrement": false,
+                    "isRawDefault": false,
+                    "options": []
+                },
                 "primljeno": {
                     "name": "primljeno",
                     "type": "boolean",
@@ -1338,7 +1357,7 @@
                     "comment": null,
                     "precision": null,
                     "scale": 0,
-                    "order": 12,
+                    "order": 13,
                     "index": false,
                     "unique": false,
                     "nullable": true,
@@ -1357,7 +1376,7 @@
                     "comment": null,
                     "precision": null,
                     "scale": 0,
-                    "order": 13,
+                    "order": 14,
                     "index": false,
                     "unique": false,
                     "nullable": true,
@@ -1376,7 +1395,7 @@
                     "comment": null,
                     "precision": null,
                     "scale": 0,
-                    "order": 14,
+                    "order": 15,
                     "index": false,
                     "unique": false,
                     "nullable": true,
@@ -1395,7 +1414,7 @@
                     "comment": null,
                     "precision": null,
                     "scale": 0,
-                    "order": 15,
+                    "order": 16,
                     "index": false,
                     "unique": false,
                     "nullable": true,
@@ -1467,7 +1486,7 @@
                     "precision": null,
                     "scale": 0,
                     "order": 1,
-                    "index": false,
+                    "index": true,
                     "unique": false,
                     "nullable": false,
                     "unsigned": true,
@@ -1486,7 +1505,7 @@
                     "precision": null,
                     "scale": 0,
                     "order": 2,
-                    "index": false,
+                    "index": true,
                     "unique": false,
                     "nullable": false,
                     "unsigned": true,
@@ -1505,7 +1524,7 @@
                     "precision": null,
                     "scale": 0,
                     "order": 3,
-                    "index": false,
+                    "index": true,
                     "unique": false,
                     "nullable": false,
                     "unsigned": true,
@@ -1524,7 +1543,7 @@
                     "precision": null,
                     "scale": 0,
                     "order": 4,
-                    "index": false,
+                    "index": true,
                     "unique": false,
                     "nullable": false,
                     "unsigned": true,
@@ -1588,7 +1607,7 @@
                     "index": false,
                     "unique": false,
                     "nullable": true,
-                    "unsigned": false,
+                    "unsigned": true,
                     "autoIncrement": false,
                     "isRawDefault": false,
                     "options": []
@@ -2264,6 +2283,7 @@
             "namespace": "App\\Models",
             "path": "Models\/RadniNalog.php",
             "allImports": [
+                "App\\Enums\\TipMleka",
                 "Illuminate\\Database\\Eloquent\\Model",
                 "Illuminate\\Database\\Eloquent\\SoftDeletes",
                 "Illuminate\\Database\\Eloquent\\Factories\\HasFactory"
@@ -2398,7 +2418,12 @@
                     "includedPivotColumns": []
                 }
             ],
-            "methods": [],
+            "methods": [
+                {
+                    "name": "getTipMlekaAttribute",
+                    "content": "    public function getTipMlekaAttribute($value)\n    {\n        foreach (TipMleka::cases() as $case) {\n            if ($case->name === strtoupper($value)) {\n                return $case->value;\n            }\n        }\n    }\n"
+                }
+            ],
             "hasTimestamps": true,
             "hasSoftDeletes": true,
             "isAuthenticatable": false

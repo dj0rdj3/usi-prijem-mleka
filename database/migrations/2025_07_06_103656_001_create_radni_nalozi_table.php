@@ -15,13 +15,25 @@ return new class extends Migration {
         Schema::create('radni_nalozi', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('domacinstvo_id')->unsigned();
+            $table
+                ->bigInteger('domacinstvo_id')
+                ->unsigned()
+                ->index();
 
-            $table->bigInteger('rukovodilac_id')->unsigned();
+            $table
+                ->bigInteger('rukovodilac_id')
+                ->unsigned()
+                ->index();
 
-            $table->bigInteger('vozac_id')->unsigned();
+            $table
+                ->bigInteger('vozac_id')
+                ->unsigned()
+                ->index();
 
-            $table->bigInteger('tehnolog_id')->unsigned();
+            $table
+                ->bigInteger('tehnolog_id')
+                ->unsigned()
+                ->index();
 
             $table->enum('tip_mleka', ['kravlje', 'kozije', 'ovcije']);
 
@@ -30,7 +42,10 @@ return new class extends Migration {
                 ->unsigned()
                 ->nullable();
 
-            $table->decimal('procenat_mm')->nullable();
+            $table
+                ->decimal('procenat_mm', 3, 1)
+                ->unsigned()
+                ->nullable();
 
             $table->boolean('primljeno')->nullable();
 

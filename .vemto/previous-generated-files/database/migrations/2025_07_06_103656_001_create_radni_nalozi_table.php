@@ -15,13 +15,25 @@ return new class extends Migration {
         Schema::create('radni_nalozi', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('domacinstvo_id')->unsigned();
+            $table
+                ->bigInteger('domacinstvo_id')
+                ->unsigned()
+                ->index();
 
-            $table->bigInteger('rukovodilac_id')->unsigned();
+            $table
+                ->bigInteger('rukovodilac_id')
+                ->unsigned()
+                ->index();
 
-            $table->bigInteger('vozac_id')->unsigned();
+            $table
+                ->bigInteger('vozac_id')
+                ->unsigned()
+                ->index();
 
-            $table->bigInteger('tehnolog_id')->unsigned();
+            $table
+                ->bigInteger('tehnolog_id')
+                ->unsigned()
+                ->index();
 
             $table->enum('tip_mleka', ['kravlje', 'kozije', 'ovcije']);
 
@@ -30,7 +42,10 @@ return new class extends Migration {
                 ->unsigned()
                 ->nullable();
 
-            $table->decimal('procenat_mm')->nullable();
+            $table
+                ->decimal('procenat_mm')
+                ->unsigned()
+                ->nullable();
 
             $table->boolean('primljeno')->nullable();
 
@@ -45,30 +60,22 @@ return new class extends Migration {
             $table
                 ->foreign('rukovodilac_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('users');
 
             $table
                 ->foreign('vozac_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('users');
 
             $table
                 ->foreign('tehnolog_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('users');
 
             $table
                 ->foreign('domacinstvo_id')
                 ->references('id')
-                ->on('domacinstva')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('domacinstva');
         });
     }
 

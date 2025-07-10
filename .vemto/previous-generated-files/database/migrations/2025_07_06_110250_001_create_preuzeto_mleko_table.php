@@ -15,7 +15,10 @@ return new class extends Migration {
         Schema::create('preuzeto_mleko', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('radni_nalog_id')->unsigned();
+            $table
+                ->bigInteger('radni_nalog_id')
+                ->unsigned()
+                ->index();
 
             $table->string('ime_rukovodioca', 255)->nullable();
 
@@ -37,6 +40,11 @@ return new class extends Migration {
 
             $table
                 ->integer('kolicina_mleka')
+                ->unsigned()
+                ->nullable();
+
+            $table
+                ->decimal('procenat_mm')
                 ->unsigned()
                 ->nullable();
 
