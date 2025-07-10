@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class RadniNalogUpdateRequest extends FormRequest
 {
@@ -20,10 +21,29 @@ class RadniNalogUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kolicina_mleka' => ['nullable', 'integer'],
-            'procenat_mm' => ['nullable', 'numeric', 'between:0.0,99.9'],
-            'primljeno' => ['nullable', 'boolean'],
-            'komentar' => ['nullable', 'string', 'max:5000'],
+            'kolicina_mleka' => [
+                'nullable',
+                'integer',
+                Rule::prohibitedIf(fn() => !is_null($this->input('komentar'))),
+                Rule::requiredIf(fn() => $this->user()->tip === 'vozac' && is_null($this->input('komentar')))
+            ],
+            'procenat_mm' => [
+                'nullable',
+                'numeric',
+                'between:0.0,99.9',
+                Rule::requiredIf(fn() => $this->input('primljeno') === '1')
+            ],
+            'primljeno' => [
+                'nullable',
+                'boolean',
+                Rule::requiredIf(fn() => $this->user()->tip === 'tehnolog')
+            ],
+            'komentar' => [
+                'nullable',
+                'string',
+                'max:5000',
+                Rule::requiredIf(fn() => $this->input('primljeno') === '0')
+            ],
         ];
     }
 }

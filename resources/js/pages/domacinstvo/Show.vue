@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from '@/layouts/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import TextLink from '@/components/TextLink.vue';
 
 const props = defineProps(['domacinstvo']);
 
@@ -29,7 +30,7 @@ const breadcrumbs = [
                         </ul>
 
                         <Button class="my-3">
-                            <a :href="route('domacinstvo.edit', domacinstvo)">Izmeni domaćinstvo</a>
+                            <TextLink nostyle :href="route('domacinstvo.edit', domacinstvo)">Izmeni domaćinstvo</TextLink>
                         </Button>
                         <br />
                         <ObrisiDomacinstvo :domacinstvo="domacinstvo" />

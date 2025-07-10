@@ -14,7 +14,14 @@ class RadniNalogController extends Controller
 {
     public function index(Request $request)
     {
-        $radni_nalozi = RadniNalog::where('primljeno', NULL)
+        $radni_nalozi = RadniNalog::query()
+            ->when($request->user()->tip === 'vozac', function ($query) {
+                $query->where('kolicina_mleka', NULL);
+            })
+            ->when($request->user()->tip === 'tehnolog', function ($query) {
+                $query->where('kolicina_mleka', '!=', NULL);
+            })
+            ->where('primljeno', NULL)
             ->where('vozac_id', $request->user()->id)
             ->orWhere('tehnolog_id', $request->user()->id)
             ->with('domacinstvo')
@@ -53,12 +60,36 @@ class RadniNalogController extends Controller
 
     public function edit(Request $request, RadniNalog $radniNalog)
     {
-        //
+        if (
+            !is_null($radniNalog->primljeno)
+            || $request->user()->tip === 'tehnolog' && is_null($radniNalog->kolicina_mleka)
+            || $request->user()->tip === 'vozac' && !is_null($radniNalog->kolicina_mleka)
+        ) {
+            return abort(403);
+        }
+
+        $radniNalog->load('domacinstvo.vlasnik');
+        return Inertia::render('radni-nalog/Edit', [
+            'radni_nalog' => $radniNalog
+        ]);
     }
 
     public function update(RadniNalogUpdateRequest $request, RadniNalog $radniNalog)
     {
-        //
+        if (
+            !is_null($radniNalog->primljeno)
+            || $request->user()->tip === 'tehnolog' && is_null($radniNalog->kolicina_mleka)
+            || $request->user()->tip === 'vozac' && !is_null($radniNalog->kolicina_mleka)
+        ) {
+            return abort(403);
+        }
+
+        $attributes = $request->validated();
+        if (empty($attributes['kolicina_mleka']) && is_null($radniNalog->kolicina_mleka)) {
+            $attributes['primljeno'] = 0;
+        }
+        $radniNalog->update($attributes);
+        return redirect(route('radni-nalog.index'));
     }
 
     public function destroy(Request $request, RadniNalog $radniNalog)
