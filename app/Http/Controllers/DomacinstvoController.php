@@ -7,7 +7,6 @@ use App\Models\Domacinstvo;
 use Illuminate\Http\Request;
 use App\Http\Requests\DomacinstvoStoreRequest;
 use App\Http\Requests\DomacinstvoUpdateRequest;
-use App\Models\RadniNalog;
 
 class DomacinstvoController extends Controller
 {

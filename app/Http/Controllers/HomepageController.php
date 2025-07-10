@@ -44,4 +44,9 @@ class HomepageController extends Controller
             return redirect(route('home'));
         }
     }
+
+    public function dashboard()
+    {
+        return Inertia::render('rukovodilac/Dashboard');
+    }
 }
