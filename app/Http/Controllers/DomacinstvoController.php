@@ -7,6 +7,7 @@ use App\Models\Domacinstvo;
 use Illuminate\Http\Request;
 use App\Http\Requests\DomacinstvoStoreRequest;
 use App\Http\Requests\DomacinstvoUpdateRequest;
+use App\Models\RadniNalog;
 
 class DomacinstvoController extends Controller
 {
@@ -39,6 +40,10 @@ class DomacinstvoController extends Controller
             return abort(403);
         }
 
+        $domacinstvo->load(['radniNalozi' => function ($query) {
+            $query->where('primljeno', '!=', NULL);
+        }]);
+        
         return Inertia::render('domacinstvo/Show', [
             'domacinstvo' => $domacinstvo
         ]);
