@@ -43,9 +43,16 @@ const breadcrumbs = [
                         <span class="text-sm font-semibold">Tip mleka:</span><br />
                         {{ nalog.tip_mleka }}
                     </p>
+                    <hr v-if="user.tip === 'rukovodilac'" />
+
+                    <p v-if="user.tip === 'rukovodilac'">
+                        <span class="text-sm font-semibold">Primljeno:</span><br />
+                        {{ nalog.primljeno === null ? 'U obradi' : nalog.primljeno ? 'Da' : 'Ne' }}
+                    </p>
 
                     <Button class="mt-2">
-                        <TextLink nostyle :href="route('radni-nalog.edit', nalog)">Obradi nalog</TextLink>
+                        <TextLink v-if="user.tip === 'vozac' || user.tip === 'tehnolog'" nostyle :href="route('radni-nalog.edit', nalog)">Obradi nalog</TextLink>
+                        <TextLink v-if="user.tip === 'rukovodilac'" nostyle :href="route('radni-nalog.show', nalog)">Pregledaj nalog</TextLink>
                     </Button>
                 </div>
             </div>

@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid, SquareUserRound } from 'lucide-vue-next';
+import { House, NotebookPen, Folders, LayoutGrid, SquareUserRound } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 import { usePage } from '@inertiajs/vue3';
 
@@ -20,7 +19,7 @@ switch (user.tip) {
                 {
                     title: 'Moje domaćinstvo',
                     href: `/domacinstvo/${user.domacinstvo.id}`,
-                    icon: BookOpen,
+                    icon: House,
                 },
             ];
         }
@@ -29,7 +28,7 @@ switch (user.tip) {
                 {
                     title: 'Početna',
                     href: '/pocetna',
-                    icon: BookOpen,
+                    icon: House,
                 },
             ];
         }
@@ -44,7 +43,12 @@ switch (user.tip) {
             {
                 title: 'Izdavanje radnog naloga',
                 href: '/radni-nalog/create',
-                icon: BookOpen,
+                icon: NotebookPen,
+            },
+            {
+                title: 'Radni nalozi',
+                href: '/radni-nalog',
+                icon: Folders,
             },
             {
                 title: 'Zaposleni',
@@ -59,7 +63,7 @@ switch (user.tip) {
             {
                 title: 'Radni nalozi',
                 href: '/radni-nalog',
-                icon: Folder,
+                icon: Folders,
             },
         ];
         break;
@@ -72,7 +76,7 @@ switch (user.tip) {
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton size="lg" as-child>
-                        <Link :href="route('pocetna')">
+                        <Link :href="route('home')">
                         <AppLogo />
                         </Link>
                     </SidebarMenuButton>

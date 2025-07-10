@@ -14,18 +14,22 @@ class RadniNalogController extends Controller
 {
     public function index(Request $request)
     {
-        $radni_nalozi = RadniNalog::query()
-            ->when($request->user()->tip === 'vozac', function ($query) {
-                $query->where('kolicina_mleka', NULL);
-            })
-            ->when($request->user()->tip === 'tehnolog', function ($query) {
-                $query->where('kolicina_mleka', '!=', NULL);
-            })
-            ->where('primljeno', NULL)
-            ->where('vozac_id', $request->user()->id)
-            ->orWhere('tehnolog_id', $request->user()->id)
-            ->with('domacinstvo')
-            ->get();
+        if ($request->user()->tip === 'rukovodilac') {
+            $radni_nalozi = RadniNalog::with('domacinstvo')->get();
+        } else {
+            $radni_nalozi = RadniNalog::query()
+                ->when($request->user()->tip === 'vozac', function ($query) use ($request) {
+                    $query->where('kolicina_mleka', NULL)
+                        ->where('vozac_id', $request->user()->id);
+                })
+                ->when($request->user()->tip === 'tehnolog', function ($query) use ($request) {
+                    $query->where('kolicina_mleka', '!=', NULL)
+                        ->where('tehnolog_id', $request->user()->id);
+                })
+                ->where('primljeno', NULL)
+                ->with('domacinstvo')
+                ->get();
+        }
 
         return Inertia::render('radni-nalog/Index', [
             'radni_nalozi' => $radni_nalozi
@@ -55,7 +59,17 @@ class RadniNalogController extends Controller
 
     public function show(Request $request, RadniNalog $radniNalog)
     {
-        //
+        if ($request->user()->tip !== 'rukovodilac') abort(403);
+        
+        $radniNalog->load([
+            'domacinstvo.vlasnik',
+            'rukovodilac',
+            'vozac',
+            'tehnolog'
+        ]);
+        return Inertia::render('radni-nalog/Show', [
+            'radni_nalog' => $radniNalog
+        ]);
     }
 
     public function edit(Request $request, RadniNalog $radniNalog)
