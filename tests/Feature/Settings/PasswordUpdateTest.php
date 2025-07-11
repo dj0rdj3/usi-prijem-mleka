@@ -19,7 +19,7 @@ class PasswordUpdateTest extends TestCase
             ->actingAs($user)
             ->from('/settings/password')
             ->put('/settings/password', [
-                'current_password' => 'password',
+                'current_password' => 'Pa55w.rd',
                 'password' => 'new-password',
                 'password_confirmation' => 'new-password',
             ]);
