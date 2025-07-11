@@ -24,7 +24,8 @@ class DomacinstvoStoreRequest extends FormRequest
             'adresa' => ['required', 'string', 'max:255'],
             'koordinate' => ['required', 'array', 'min:2', 'max:2'],
             'tipovi_mleka' => ['required', 'array', 'min:1', 'max:3'],
-            'tipovi_mleka.*' => ['in:kravlje,kozije,ovcije']
+            'tipovi_mleka.*' => ['in:kravlje,kozije,ovcije'],
+            'uslovi' => ['required', 'boolean', 'accepted'],
         ];
     }
 }

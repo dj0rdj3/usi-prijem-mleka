@@ -7,6 +7,8 @@ Route::middleware('auth')->group(function () {
     
     Route::get('pocetna', [App\Http\Controllers\HomepageController::class, 'pocetna'])->name('pocetna');
 
+    Route::inertia('ugovor', 'Ugovor')->name('ugovor');
+
     Route::resource('zaposleni', App\Http\Controllers\UserController::class)->except('create', 'store', 'edit');
 
     Route::resource('domacinstvo', App\Http\Controllers\DomacinstvoController::class)->except('index');

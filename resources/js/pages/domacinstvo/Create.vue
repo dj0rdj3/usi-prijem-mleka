@@ -32,7 +32,7 @@ const breadcrumbs = [
                     </div>
 
                     <div>
-                        <p class="flex items-center gap-2 text-sm leading-none font-medium select-none mb-2">Precizna lokacija</p>
+                        <p class="text-sm leading-none font-medium select-none mb-2">Precizna lokacija</p>
                         <VMap style="height: 250px;" class="rounded-xl relative" :center="[44.255, 21.0]" zoom="6" @view-changed="handleViewUpdate">
                             <VMapOsmTileLayer />
                             <VMapZoomControl position="bottomright" />
@@ -41,7 +41,7 @@ const breadcrumbs = [
                     </div>
 
                     <div class="flex flex-col gap-3">
-                        <p class="flex items-center gap-2 text-sm leading-none font-medium select-none">Vrste mleka koje nudite</p>
+                        <p class="text-sm leading-none font-medium select-none">Vrste mleka koje nudite</p>
                         <div class="flex items-center justify-between">
                             <Label for="tip_kravlje" class="flex items-center">
                                 <Checkbox id="tip_kravlje" v-model="tipovi_mleka.kravlje" />
@@ -64,6 +64,15 @@ const breadcrumbs = [
                         </div>
                         <InputError :message="form.errors.tipovi_mleka" />
                     </div>
+
+                    <p class="text-sm leading-none font-medium select-none">Ugovor</p>
+                    <div class="flex items-center justify-between -mt-3">
+                        <Label for="uslovi" class="flex items-center">
+                            <Checkbox id="uslovi" v-model="form.uslovi" />
+                            <span>Prihvatam uslove <a class="underline" target="_blank" :href="route('ugovor')">ugovora o saradnji</a></span>
+                        </Label>
+                    </div>
+                    <InputError :message="form.errors.uslovi" />
 
                     <Button type="submit" class="mt-2 w-full" :disabled="form.processing">
                         <LoaderCircle v-if="form.processing" class="h-4 w-4 animate-spin" />
@@ -98,7 +107,7 @@ export default {
                     lat: 0,
                     lng: 0
                 },
-
+                uslovi: false,
             }),
             tipovi_mleka: {
                 kravlje: false,

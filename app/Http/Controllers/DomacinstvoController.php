@@ -28,6 +28,7 @@ class DomacinstvoController extends Controller
         $attributes['koordinate'] = $koordinate;
         $attributes['tipovi_mleka'] = implode(',', $attributes['tipovi_mleka']);
         $attributes['user_id'] = $request->user()->id;
+        unset($attributes['uslovi']);
 
         $domacinstvo = Domacinstvo::create($attributes);
         return redirect(route('domacinstvo.show', $domacinstvo));
@@ -42,7 +43,7 @@ class DomacinstvoController extends Controller
         $domacinstvo->load(['radniNalozi' => function ($query) {
             $query->where('primljeno', '!=', NULL);
         }]);
-        
+
         return Inertia::render('domacinstvo/Show', [
             'domacinstvo' => $domacinstvo
         ]);

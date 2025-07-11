@@ -9,6 +9,7 @@ use App\Models\Domacinstvo;
 use Illuminate\Http\Request;
 use App\Http\Requests\RadniNalogStoreRequest;
 use App\Http\Requests\RadniNalogUpdateRequest;
+use App\Models\PreuzetoMleko;
 
 class RadniNalogController extends Controller
 {
@@ -60,7 +61,7 @@ class RadniNalogController extends Controller
     public function show(Request $request, RadniNalog $radniNalog)
     {
         if ($request->user()->tip !== 'rukovodilac') abort(403);
-        
+
         $radniNalog->load([
             'domacinstvo.vlasnik',
             'rukovodilac',
@@ -102,7 +103,12 @@ class RadniNalogController extends Controller
         if (empty($attributes['kolicina_mleka']) && is_null($radniNalog->kolicina_mleka)) {
             $attributes['primljeno'] = 0;
         }
+
         $radniNalog->update($attributes);
+        if ($radniNalog->primljeno !== NULL) {
+            PreuzetoMleko::fromRadniNalog($radniNalog);
+        }
+
         return redirect(route('radni-nalog.index'));
     }
 

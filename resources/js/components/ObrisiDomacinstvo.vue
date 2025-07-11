@@ -43,14 +43,14 @@ const closeModal = () => {
 <template>
     <Dialog>
         <DialogTrigger as-child>
-            <Button variant="destructive">Obriši domaćinstvo</Button>
+            <Button variant="destructive">Prekini saradnju</Button>
         </DialogTrigger>
         <DialogContent>
             <form class="space-y-6" @submit="obrisiDomacinstvo">
                 <DialogHeader class="space-y-3">
-                    <DialogTitle>Da li ste sigurni da želite da obrišete svoje domaćinstvo?</DialogTitle>
+                    <DialogTitle>Da li ste sigurni da želite da prekinete saradnju sa nama?</DialogTitle>
                     <DialogDescription>
-                        Unesite svoju šifru ako želite da obrišete svoje domaćinstvo.
+                        Unesite svoju šifru ako želite da nastavite.
                     </DialogDescription>
                 </DialogHeader>
 
