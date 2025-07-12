@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\TipMleka;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -12,6 +13,15 @@ class PreuzetoMleko extends Model
     protected $table = 'preuzeto_mleko';
 
     protected $guarded = [];
+
+    public function getTipMlekaAttribute($value)
+    {
+        foreach (TipMleka::cases() as $case) {
+            if ($case->name === strtoupper($value)) {
+                return $case->value;
+            }
+        }
+    }
 
     public function radniNalog()
     {
@@ -37,7 +47,9 @@ class PreuzetoMleko extends Model
             'telefon_tehnologa' => $radniNalog->tehnolog->telefon,
             'ime_domacina' => $radniNalog->domacinstvo->vlasnik->name,
             'telefon_domacina' => $radniNalog->domacinstvo->vlasnik->telefon,
+            'naziv_domacinstva' => $radniNalog->domacinstvo->naziv,
             'adresa_domacinstva' => $radniNalog->domacinstvo->adresa,
+            'tip_mleka' => $radniNalog->tip_mleka,
             'kolicina_mleka' => $radniNalog->kolicina_mleka,
             'procenat_mm' => $radniNalog->procenat_mm,
             'primljeno' => $radniNalog->primljeno,

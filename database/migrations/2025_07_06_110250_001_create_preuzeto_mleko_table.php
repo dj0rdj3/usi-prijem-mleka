@@ -36,7 +36,11 @@ return new class extends Migration {
 
             $table->string('telefon_domacina', 15)->nullable();
 
+            $table->string('naziv_domacinstva', 255)->nullable();
+
             $table->string('adresa_domacinstva', 255)->nullable();
+
+            $table->enum('tip_mleka', ['kravlje', 'kozije', 'ovcije'])->nullable();
 
             $table
                 ->integer('kolicina_mleka')
