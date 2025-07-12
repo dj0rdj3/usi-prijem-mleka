@@ -16,7 +16,9 @@ class PreuzetoMlekoSeeder extends Seeder
         $radni_nalozi = RadniNalog::all();
 
         foreach ($radni_nalozi as $nalog) {
-            PreuzetoMleko::fromRadniNalog($nalog);
+            $preuzeto = PreuzetoMleko::fromRadniNalog($nalog);
+            $preuzeto->created_at = fake()->dateTimeThisYear();
+            $preuzeto->save();
         }
     }
 }

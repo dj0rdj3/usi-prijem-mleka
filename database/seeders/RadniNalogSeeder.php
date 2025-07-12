@@ -19,7 +19,7 @@ class RadniNalogSeeder extends Seeder
         $vozaci = User::where('tip', 'vozac')->get();
         $tehnolozi = User::where('tip', 'tehnolog')->get();
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $domacinstvo = $domacinstva->random();
             RadniNalog::factory()->create([
                 'rukovodilac_id' => $rukovodioci->random()->id,
