@@ -21,48 +21,46 @@ const breadcrumbs = [
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col rounded-xl p-4 overflow-x-auto">
             <Heading title="Radni nalozi" />
-            <div class="flex flex-wrap items-start gap-5">
-                <div v-for="nalog in radni_nalozi" class="bg-neutral-900 p-3 rounded-xl border border-neutral-800">
-                    <h4 class="font-semibold">Radni nalog #{{ nalog.id }}</h4>
-                    <hr />
-
-                    <p>
-                        <span class="text-sm font-semibold">Domaćinstvo:</span><br />
-                        {{ nalog.domacinstvo.naziv }}<br />
-                        <span v-if="user.tip === 'vozac'" class="text-sm">{{ nalog.domacinstvo.adresa }}</span>
-                    </p>
-                    <hr />
-
-                    <p v-if="user.tip === 'tehnolog'">
-                        <span class="text-sm font-semibold">Količina:</span><br />
-                        {{ nalog.kolicina_mleka }}&nbsp;L<br />
-                    </p>
-                    <hr v-if="user.tip === 'tehnolog'" />
-
-                    <p>
-                        <span class="text-sm font-semibold">Tip mleka:</span><br />
-                        {{ nalog.tip_mleka }}
-                    </p>
-                    <hr v-if="user.tip === 'rukovodilac'" />
-
-                    <p v-if="user.tip === 'rukovodilac'">
-                        <span class="text-sm font-semibold">Primljeno:</span><br />
-                        {{ nalog.primljeno === null ? 'U obradi' : nalog.primljeno ? 'Da' : 'Ne' }}
-                    </p>
-
-                    <Button class="mt-2">
-                        <TextLink v-if="user.tip === 'vozac' || user.tip === 'tehnolog'" nostyle :href="route('radni-nalog.edit', nalog)">Obradi nalog</TextLink>
-                        <TextLink v-if="user.tip === 'rukovodilac'" nostyle :href="route('radni-nalog.show', nalog)">Pregledaj nalog</TextLink>
-                    </Button>
-                </div>
-            </div>
+            <table class="-mt-2 table text-left w-full">
+                <thead>
+                    <tr class="bg-neutral-800">
+                        <th class="rounded-tl-xl pl-2 leading-8">Radni nalog</th>
+                        <th>Akcija</th>
+                        <th>Domaćinstvo</th>
+                        <th v-if="user.tip === 'vozac'">Adresa</th>
+                        <th>Vrsta mleka</th>
+                        <th v-if="user.tip === 'tehnolog'" class="rounded-tr-xl pr-2">Količina mleka</th>
+                        <th v-if="user.tip === 'rukovodilac'" class="rounded-tr-xl pr-2">Primljeno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="nalog in radni_nalozi" class="even:bg-neutral-900/90 odd:bg-neutral-900/50 border-t-1">
+                        <td v-text="'#' + nalog.id" class="pl-2 py-2.5"></td>
+                        <td>
+                            <TextLink v-if="user.tip === 'vozac' || user.tip === 'tehnolog'" :href="route('radni-nalog.edit', nalog)">Obradi nalog</TextLink>
+                            <TextLink v-if="user.tip === 'rukovodilac'" :href="route('radni-nalog.show', nalog)">Pregledaj nalog</TextLink>
+                        </td>
+                        <td v-text="nalog.domacinstvo.naziv"></td>
+                        <td v-if="user.tip === 'vozac'" v-text="nalog.domacinstvo.adresa"></td>
+                        <td v-text="nalog.tip_mleka"></td>
+                        <td v-if="user.tip === 'tehnolog'" v-text="nalog.kolicina_mleka ? nalog.kolicina_mleka + ' L' : '-'"></td>
+                        <td v-if="user.tip === 'rukovodilac'">
+                            <p v-text="nalog.primljeno ? 'Da' : 'Ne'" class="inline-flex px-2 rounded-full border-2 font-semibold" :class="[nalog.primljeno ? 'bg-green-600 border-green-400' : 'bg-red-600 border-red-400']"></p>
+                        </td>
+                    </tr>
+                    <tr class="bg-neutral-800/80">
+                        <td colspan="5" class="text-sm rounded-b-xl py-1.5 px-2 text-center">
+                            <p>Ukupno: {{ radni_nalozi.length }}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </AppLayout>
 </template>
 
 <script>
 import Heading from '@/components/Heading.vue'
-import { Button } from '@/components/ui/button'
 export default {
     props: {
         radni_nalozi: Object,

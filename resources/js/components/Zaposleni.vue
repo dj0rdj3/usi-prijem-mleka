@@ -14,8 +14,8 @@ import Select from '@/components/Select.vue'
             <InputError :message="formPozicija.errors.tip" />
         </form>
     </td>
-    <td v-if="zaposleni.tip !== 'domacin'">
-        <form @submit.prevent="submitDelete">
+    <td>
+        <form @submit.prevent="submitDelete" v-if="zaposleni.tip !== 'domacin'">
             <Button type="submit" variant="destructive" :disabled="formDelete.processing" class="my-1.5 mx-2">
                 <LoaderCircle v-if="formDelete.processing" class="h-4 w-4 animate-spin" />
                 Otpusti
