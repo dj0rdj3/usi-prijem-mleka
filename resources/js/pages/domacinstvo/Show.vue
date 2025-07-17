@@ -41,7 +41,9 @@ const breadcrumbs = [
                     <VMap style="height: 250px;" class="z-5 rounded-xl" :center="domacinstvo.koordinate" zoom="15">
                         <VMapOsmTileLayer />
                         <VMapZoomControl position="bottomright" />
-                        <VMapMarker :latlng="domacinstvo.koordinate" />
+                        <VMapMarker :latlng="domacinstvo.koordinate">
+                            <VMapIcon :icon-url="MarkerIcon" :shadow-url="MarkerShadow" :icon-size="[25, 41]" :icon-anchor="[12, 41]" :shadow-size="[41, 41]" />
+                        </VMapMarker>
                     </VMap>
                 </div>
             </div>
@@ -85,8 +87,10 @@ const breadcrumbs = [
 import Heading from '@/components/Heading.vue'
 import { Button } from '@/components/ui/button'
 import ObrisiDomacinstvo from '@/components/ObrisiDomacinstvo.vue'
-import { VMap, VMapOsmTileLayer, VMapZoomControl, VMapMarker } from 'vue-map-ui';
+import { VMap, VMapOsmTileLayer, VMapIcon, VMapZoomControl, VMapMarker } from 'vue-map-ui';
 import 'leaflet/dist/leaflet.css';
+import MarkerIcon from 'leaflet/dist/images/marker-icon-2x.png'
+import MarkerShadow from 'leaflet/dist/images/marker-shadow.png'
 import 'vue-map-ui/dist/style.css';
 import 'vue-map-ui/dist/theme-all.css';
 export default {

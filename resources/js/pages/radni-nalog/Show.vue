@@ -35,7 +35,7 @@ const breadcrumbs = [
 
                 <p><span class="font-semibold">Tehnolog:</span> {{ radni_nalog.tehnolog.name }}</p>
                 <p><span class="ml-3 font-semibold">Telefon:</span> {{ radni_nalog.tehnolog.telefon }}</p>
-                
+
                 <p><span class="font-semibold">Tip mleka:</span> {{ radni_nalog.tip_mleka }}</p>
                 <p><span class="font-semibold">Procenat mlečne masti:</span> {{ radni_nalog.procenat_mm ? radni_nalog.procenat_mm + ' %' : 'Nije određeno' }}</p>
                 <p><span class="font-semibold">Količina mleka:</span> {{ radni_nalog.kolicina_mleka ? radni_nalog.kolicina_mleka + ' L' : 'Nije određeno' }}</p>
@@ -47,7 +47,9 @@ const breadcrumbs = [
                 <VMap style="height: 300px;" class="z-5 rounded-xl" :center="radni_nalog.domacinstvo.koordinate" zoom="14">
                     <VMapOsmTileLayer />
                     <VMapZoomControl position="bottomright" />
-                    <VMapMarker :latlng="radni_nalog.domacinstvo.koordinate" />
+                    <VMapMarker :latlng="radni_nalog.domacinstvo.koordinate">
+                        <VMapIcon :icon-url="MarkerIcon" :shadow-url="MarkerShadow" :icon-size="[25, 41]" :icon-anchor="[12, 41]" :shadow-size="[41, 41]" />
+                    </VMapMarker>
                 </VMap>
             </div>
         </div>
@@ -56,8 +58,10 @@ const breadcrumbs = [
 
 <script>
 import Heading from '@/components/Heading.vue'
-import { VMap, VMapOsmTileLayer, VMapZoomControl, VMapMarker } from 'vue-map-ui';
+import { VMap, VMapOsmTileLayer, VMapIcon, VMapZoomControl, VMapMarker } from 'vue-map-ui';
 import 'leaflet/dist/leaflet.css';
+import MarkerIcon from 'leaflet/dist/images/marker-icon-2x.png'
+import MarkerShadow from 'leaflet/dist/images/marker-shadow.png'
 import 'vue-map-ui/dist/style.css';
 import 'vue-map-ui/dist/theme-all.css';
 export default {

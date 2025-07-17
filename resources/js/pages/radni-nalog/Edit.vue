@@ -37,7 +37,9 @@ const breadcrumbs = [
                     <VMap style="height: 300px;" class="z-5 rounded-xl" :center="radni_nalog.domacinstvo.koordinate" zoom="14">
                         <VMapOsmTileLayer />
                         <VMapZoomControl position="bottomright" />
-                        <VMapMarker :latlng="radni_nalog.domacinstvo.koordinate" />
+                        <VMapMarker :latlng="radni_nalog.domacinstvo.koordinate">
+                            <VMapIcon :icon-url="MarkerIcon" :shadow-url="MarkerShadow" :icon-size="[25, 41]" :icon-anchor="[12, 41]" :shadow-size="[41, 41]" />
+                        </VMapMarker>
                     </VMap>
                 </div>
             </div>
@@ -104,8 +106,10 @@ import { LoaderCircle } from 'lucide-vue-next'
 import { Label } from '@/components/ui/label'
 import Select from '@/components/Select.vue'
 import { useForm } from '@inertiajs/vue3'
-import { VMap, VMapOsmTileLayer, VMapZoomControl, VMapMarker } from 'vue-map-ui';
+import { VMap, VMapOsmTileLayer, VMapIcon, VMapZoomControl, VMapMarker } from 'vue-map-ui';
 import 'leaflet/dist/leaflet.css';
+import MarkerIcon from 'leaflet/dist/images/marker-icon-2x.png'
+import MarkerShadow from 'leaflet/dist/images/marker-shadow.png'
 import 'vue-map-ui/dist/style.css';
 import 'vue-map-ui/dist/theme-all.css';
 export default {
