@@ -14,6 +14,7 @@ class PreuzetoMleko extends Model
 
     protected $guarded = [];
 
+    // prikaz formatirane vrste mleka pri svakom pristupu
     public function getTipMlekaAttribute($value)
     {
         foreach (TipMleka::cases() as $case) {
@@ -28,6 +29,7 @@ class PreuzetoMleko extends Model
         return $this->belongsTo(RadniNalog::class);
     }
 
+    // trajno belezenje zavrsenog radnog naloga
     public static function fromRadniNalog(RadniNalog $radniNalog)
     {
         $radniNalog->load([

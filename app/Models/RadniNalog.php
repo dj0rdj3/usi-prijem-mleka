@@ -16,6 +16,7 @@ class RadniNalog extends Model
 
     protected $guarded = [];
 
+    // prikaz formatirane vrste mleka pri svakom pristupu
     public function getTipMlekaAttribute($value)
     {
         foreach (TipMleka::cases() as $case) {

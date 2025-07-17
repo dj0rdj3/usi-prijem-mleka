@@ -10,7 +10,7 @@ class PreuzetoMlekoController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->user()->tip !== 'rukovodilac') abort(403);
+        if ($request->user()->tip !== 'rukovodilac') return abort(403);
 
         return Inertia::render('preuzeto-mleko/Index', [
             'preuzeto_mleko' => PreuzetoMleko::all(),
@@ -19,7 +19,7 @@ class PreuzetoMlekoController extends Controller
 
     public function show(Request $request, PreuzetoMleko $preuzetoMleko)
     {
-        if ($request->user()->tip !== 'rukovodilac') abort(403);
+        if ($request->user()->tip !== 'rukovodilac') return abort(403);
 
         return Inertia::render('preuzeto-mleko/Show', [
             'preuzeto_mleko' => $preuzetoMleko,

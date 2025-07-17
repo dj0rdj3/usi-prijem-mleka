@@ -9,11 +9,11 @@ Route::middleware('auth')->group(function () {
 
     Route::inertia('ugovor', 'Ugovor')->name('ugovor');
 
-    Route::resource('zaposleni', App\Http\Controllers\UserController::class)->except('create', 'store', 'edit');
+    Route::resource('zaposleni', App\Http\Controllers\UserController::class)->except('create', 'show', 'store', 'edit');
 
     Route::resource('domacinstvo', App\Http\Controllers\DomacinstvoController::class)->except('index');
 
-    Route::resource('radni-nalog', App\Http\Controllers\RadniNalogController::class);
+    Route::resource('radni-nalog', App\Http\Controllers\RadniNalogController::class)->except('destroy');
 
     Route::resource('preuzeto-mleko', App\Http\Controllers\PreuzetoMlekoController::class)->only('index', 'show');
 

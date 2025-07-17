@@ -21,6 +21,7 @@ class Domacinstvo extends Model
         return explode(',', $value);
     }
 
+    // prikaz formatiranih vrsta mleka pri svakom pristupu
     public function getTipoviMlekaAttribute($value)
     {
         return array_map(function ($name) {

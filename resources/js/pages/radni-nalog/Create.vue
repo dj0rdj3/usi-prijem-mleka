@@ -75,6 +75,7 @@ export default {
                 tehnolog_id: '',
                 tip_mleka: '',
             }),
+            // konvertovanje liste tipova mleka svakog domacinstva u format zahtevan za select
             tipovi_mleka: Object.assign({}, ...this.domacinstva.map((d) => {
                 const svi_tipovi_mleka = {
                     'Kravlje': 'kravlje',
@@ -89,6 +90,7 @@ export default {
                     }, {})
                 };
             })),
+            // mapiranje ID-ja i naziva, za select
             domacinstva_list: Object.assign({}, ...this.domacinstva.map((d) => {
                 return { [d.id]: d.naziv };
             })),

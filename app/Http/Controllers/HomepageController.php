@@ -14,10 +14,13 @@ class HomepageController extends Controller
 {
     public function root()
     {
+        // dinamicki prikaz / stranice
         switch (Auth::user()->tip) {
             case 'domacin':
                 $domacinstvo = Domacinstvo::firstWhere('user_id', Auth::user()->id);
 
+                // ako domacin ima domacinstvo, prikazujemo ga
+                // ako nema, prikazujemo pocetnu odakle moze da napravi domacinstvo
                 if ($domacinstvo) {
                     return redirect(route('domacinstvo.show', $domacinstvo));
                 } else {
@@ -25,10 +28,12 @@ class HomepageController extends Controller
                 }
                 break;
             case 'rukovodilac':
+                // prikaz dashboarda za rukovodioca
                 return redirect(route('dashboard'));
                 break;
             case 'vozac':
             case 'tehnolog':
+                // prikaz radnih naloga za zaposlene
                 return redirect(route('radni-nalog.index'));
                 break;
         }
@@ -39,6 +44,7 @@ class HomepageController extends Controller
         if (Auth::user()->tip === 'domacin') {
             $domacinstvo = Domacinstvo::firstWhere('user_id', Auth::user()->id);
 
+            // necemo da dozvolimo domacinu pristup pocetnoj ako vec ima domacinstvo
             if ($domacinstvo) {
                 return redirect(route('domacinstvo.show', $domacinstvo));
             } else {
@@ -51,6 +57,8 @@ class HomepageController extends Controller
 
     public function dashboard()
     {
+        if (Auth::user()->tip !== 'rukovodilac') return abort(403);
+        // izvestaji za prikaz na dashboardu
         $stats = [
             'broj_domacinstava' => Domacinstvo::count('id'),
             'broj_radnih_naloga' => RadniNalog::count('id'),

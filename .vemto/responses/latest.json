@@ -2268,6 +2268,7 @@
             "namespace": "App\\Models",
             "path": "Models\/PreuzetoMleko.php",
             "allImports": [
+                "App\\Enums\\TipMleka",
                 "Illuminate\\Database\\Eloquent\\Model",
                 "Illuminate\\Database\\Eloquent\\Factories\\HasFactory"
             ],
@@ -2313,6 +2314,10 @@
                 }
             ],
             "methods": [
+                {
+                    "name": "getTipMlekaAttribute",
+                    "content": "    public function getTipMlekaAttribute($value)\n    {\n        foreach (TipMleka::cases() as $case) {\n            if ($case->name === strtoupper($value)) {\n                return $case->value;\n            }\n        }\n    }\n"
+                },
                 {
                     "name": "fromRadniNalog",
                     "content": "    public static function fromRadniNalog(RadniNalog $radniNalog)\n    {\n        $radniNalog->load([\n            'domacinstvo.vlasnik',\n            'rukovodilac',\n            'vozac',\n            'tehnolog'\n        ]);\n\n        return self::create([\n            'radni_nalog_id' => $radniNalog->id,\n            'ime_rukovodioca' => $radniNalog->rukovodilac->name,\n            'telefon_rukovodioca' => $radniNalog->rukovodilac->telefon,\n            'ime_vozaca' => $radniNalog->vozac->name,\n            'telefon_vozaca' => $radniNalog->vozac->telefon,\n            'ime_tehnologa' => $radniNalog->tehnolog->name,\n            'telefon_tehnologa' => $radniNalog->tehnolog->telefon,\n            'ime_domacina' => $radniNalog->domacinstvo->vlasnik->name,\n            'telefon_domacina' => $radniNalog->domacinstvo->vlasnik->telefon,\n            'naziv_domacinstva' => $radniNalog->domacinstvo->naziv,\n            'adresa_domacinstva' => $radniNalog->domacinstvo->adresa,\n            'tip_mleka' => $radniNalog->tip_mleka,\n            'kolicina_mleka' => $radniNalog->kolicina_mleka,\n            'procenat_mm' => $radniNalog->procenat_mm,\n            'primljeno' => $radniNalog->primljeno,\n            'komentar' => $radniNalog->komentar,\n        ]);\n    }\n"

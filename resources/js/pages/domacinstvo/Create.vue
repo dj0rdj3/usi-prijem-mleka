@@ -124,6 +124,7 @@ export default {
         submit() {
             this.form.transform((data) => ({
                 ...data,
+                // pretvaranje objekta tipova mleka u listu imena
                 tipovi_mleka: Object.entries(this.tipovi_mleka)
                     .filter(([key, value]) => value)
                     .map(([key]) => key),
